@@ -31,11 +31,13 @@ service TraceSegmentReportService {
 }
 
 message SegmentObject {
-    UniqueId traceSegmentId = 1;
-    repeated SpanObjectV2 spans = 2;
-    int32 serviceId = 3;
-    int32 serviceInstanceId = 4;
-    bool isSizeLimited = 5;
+    // A string id represents the whole trace.
+    string traceId = 1;
+    UniqueId traceSegmentId = 2;
+    repeated SpanObjectV2 spans = 3;
+    int32 serviceId = 4;
+    int32 serviceInstanceId = 5;
+    bool isSizeLimited = 6;
 }
 
 message SegmentReference {
